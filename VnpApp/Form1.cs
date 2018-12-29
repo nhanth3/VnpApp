@@ -30,7 +30,7 @@ namespace VnpApp
 
         public void loadPage()
         {
-            webBrowser1.Navigate("http://10.149.34.168/ccbs/login.htm");
+            webBrowser1.Navigate("http://10.149.34.168/ccbs/login.htm");          
         }
 
         private void LoadUser()
@@ -82,6 +82,12 @@ namespace VnpApp
 
         public void login(string user, string pass)
         {
+            while (webBrowser1.Document.GetElementById("btnLogin") == null)
+            {
+                Application.DoEvents();
+                Thread.Sleep(100);
+            }
+            
             var userElements = webBrowser1.Document.GetElementById("username");
             var passElements = webBrowser1.Document.GetElementById("passWord");
             var clickElements = webBrowser1.Document.GetElementById("btnLogin");
@@ -97,6 +103,29 @@ namespace VnpApp
 
             }
             this.LoadPageChild();
+        }
+        public void login2(string user, string pass)
+        {
+            while (webBrowser1.Document.GetElementById("btnLogin") == null)
+            {
+                Application.DoEvents();
+                Thread.Sleep(100);
+            }
+
+            var userElements = webBrowser1.Document.GetElementById("username");
+            var passElements = webBrowser1.Document.GetElementById("passWord");
+            var clickElements = webBrowser1.Document.GetElementById("btnLogin");
+            userElements.InnerText = user;
+            passElements.InnerText = pass;
+            clickElements.InvokeMember("click");
+
+
+            while (webBrowser1.Document.GetElementById("ab") == null)
+            {
+                Application.DoEvents();
+                Thread.Sleep(500);
+
+            }          
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -245,6 +274,7 @@ namespace VnpApp
                     {
                         webBrowser3.Document.GetElementById("txtsomay").InnerHtml = stb;
                         stbed = stb;
+
                         break;
                     }
                 }
@@ -257,7 +287,23 @@ namespace VnpApp
                     TranNumber();
                 }
             }
-            catch { }
+            catch
+            {
+                this.loadPage();
+                int waitLoad2 = 0;
+                while (true)
+                {
+                    waitLoad2++;
+                    Application.DoEvents();
+                    Thread.Sleep(1);
+                    if (waitLoad2 == 1000) { break; }
+                }
+
+                string user = textBox1.Text;
+                string pass = textBox2.Text;
+                login2(user, pass);
+                btnFind_Click(new object(), new EventArgs());
+            }
 
         }
         private void autoFind()
@@ -283,6 +329,7 @@ namespace VnpApp
         {
             btnStop.Visible = true;
             checkLoop = true;
+            stbed = string.Empty;
             while (checkLoop && string.IsNullOrEmpty(stbed))
             {
                 countLB = 0;
