@@ -49,13 +49,13 @@
             this.webBrowser1.Location = new System.Drawing.Point(15, 12);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(651, 214);
+            this.webBrowser1.Size = new System.Drawing.Size(570, 177);
             this.webBrowser1.TabIndex = 3;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(12, 242);
+            this.lblName.Location = new System.Drawing.Point(19, 200);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(53, 13);
             this.lblName.TabIndex = 13;
@@ -63,14 +63,14 @@
             // 
             // txtTime
             // 
-            this.txtTime.Location = new System.Drawing.Point(71, 239);
+            this.txtTime.Location = new System.Drawing.Point(78, 197);
             this.txtTime.Name = "txtTime";
             this.txtTime.Size = new System.Drawing.Size(100, 20);
             this.txtTime.TabIndex = 14;
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(431, 237);
+            this.btnStop.Location = new System.Drawing.Point(413, 195);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(75, 23);
             this.btnStop.TabIndex = 19;
@@ -80,7 +80,7 @@
             // 
             // btnFind
             // 
-            this.btnFind.Location = new System.Drawing.Point(305, 237);
+            this.btnFind.Location = new System.Drawing.Point(298, 196);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(100, 23);
             this.btnFind.TabIndex = 18;
@@ -90,7 +90,7 @@
             // 
             // btnHome
             // 
-            this.btnHome.Location = new System.Drawing.Point(200, 238);
+            this.btnHome.Location = new System.Drawing.Point(196, 196);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(75, 23);
             this.btnHome.TabIndex = 17;
@@ -101,22 +101,22 @@
             // lblUserFind
             // 
             this.lblUserFind.AutoSize = true;
-            this.lblUserFind.Location = new System.Drawing.Point(554, 246);
+            this.lblUserFind.Location = new System.Drawing.Point(507, 204);
             this.lblUserFind.Name = "lblUserFind";
             this.lblUserFind.Size = new System.Drawing.Size(0, 13);
             this.lblUserFind.TabIndex = 20;
             // 
             // webBrowser2
             // 
-            this.webBrowser2.Location = new System.Drawing.Point(12, 265);
+            this.webBrowser2.Location = new System.Drawing.Point(22, 231);
             this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser2.Name = "webBrowser2";
-            this.webBrowser2.Size = new System.Drawing.Size(654, 250);
+            this.webBrowser2.Size = new System.Drawing.Size(563, 199);
             this.webBrowser2.TabIndex = 21;
             // 
             // btnSaveUser
             // 
-            this.btnSaveUser.Location = new System.Drawing.Point(700, 90);
+            this.btnSaveUser.Location = new System.Drawing.Point(626, 100);
             this.btnSaveUser.Name = "btnSaveUser";
             this.btnSaveUser.Size = new System.Drawing.Size(75, 23);
             this.btnSaveUser.TabIndex = 26;
@@ -127,14 +127,14 @@
             // cboUserFind
             // 
             this.cboUserFind.FormattingEnabled = true;
-            this.cboUserFind.Location = new System.Drawing.Point(690, 131);
+            this.cboUserFind.Location = new System.Drawing.Point(614, 140);
             this.cboUserFind.Name = "cboUserFind";
-            this.cboUserFind.Size = new System.Drawing.Size(100, 381);
+            this.cboUserFind.Size = new System.Drawing.Size(100, 290);
             this.cboUserFind.TabIndex = 25;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(700, 56);
+            this.btnLogin.Location = new System.Drawing.Point(626, 66);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 24;
@@ -144,14 +144,14 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(690, 30);
+            this.textBox2.Location = new System.Drawing.Point(614, 40);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 23;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(690, 4);
+            this.textBox1.Location = new System.Drawing.Point(614, 14);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 22;
@@ -159,17 +159,17 @@
             // 
             // webBrowser3
             // 
-            this.webBrowser3.Location = new System.Drawing.Point(796, 231);
+            this.webBrowser3.Location = new System.Drawing.Point(720, 150);
             this.webBrowser3.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser3.Name = "webBrowser3";
-            this.webBrowser3.Size = new System.Drawing.Size(456, 281);
+            this.webBrowser3.Size = new System.Drawing.Size(442, 260);
             this.webBrowser3.TabIndex = 27;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 528);
+            this.ClientSize = new System.Drawing.Size(1174, 447);
             this.Controls.Add(this.webBrowser3);
             this.Controls.Add(this.btnSaveUser);
             this.Controls.Add(this.cboUserFind);

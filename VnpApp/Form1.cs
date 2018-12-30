@@ -16,6 +16,7 @@ namespace VnpApp
         bool checkLoop = true;
         int countLB = 0;
         int indexUser = 0;
+        int countUserSearch = 0;
         //  string ScriptGetNumber = "document.getElementById('lblKetqua').getElementsByTagName('tr')[1].getElementsByTagName('td')[1].innerText";
 
         public Form1()
@@ -30,7 +31,7 @@ namespace VnpApp
 
         public void loadPage()
         {
-            webBrowser1.Navigate("http://10.149.34.168/ccbs/login.htm");          
+            webBrowser1.Navigate("http://10.149.34.168/ccbs/login.htm");
         }
 
         private void LoadUser()
@@ -87,7 +88,7 @@ namespace VnpApp
                 Application.DoEvents();
                 Thread.Sleep(100);
             }
-            
+
             var userElements = webBrowser1.Document.GetElementById("username");
             var passElements = webBrowser1.Document.GetElementById("passWord");
             var clickElements = webBrowser1.Document.GetElementById("btnLogin");
@@ -125,7 +126,7 @@ namespace VnpApp
                 Application.DoEvents();
                 Thread.Sleep(500);
 
-            }          
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -308,22 +309,22 @@ namespace VnpApp
         }
         private void autoFind()
         {
-
-            if (indexUser >= cboUserFind.Items.Count)
+            if (indexUser < cboUserFind.Items.Count)
             {
-                indexUser = 0;
+                AddScriptFind(cboUserFind.Items[indexUser].ToString());
+                lblUserFind.Text = cboUserFind.Items[indexUser].ToString();
+                Thread.Sleep(300);
+
+                countLB++;
+                ClickFind(countLB);
+
+                TranNumber();
+                countUserSearch++;
+                if (countUserSearch > 4998)
+                {
+                    indexUser++;
+                }
             }
-
-            AddScriptFind(cboUserFind.Items[indexUser].ToString());
-            lblUserFind.Text = cboUserFind.Items[indexUser].ToString();
-            Thread.Sleep(300);
-
-            countLB++;
-            ClickFind(countLB);
-
-            TranNumber();
-
-            indexUser++;
         }
         private void btnFind_Click(object sender, EventArgs e)
         {
