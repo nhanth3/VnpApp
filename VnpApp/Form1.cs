@@ -24,6 +24,7 @@ namespace VnpApp
 
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.loadPage();
             this.AddListUser();
             LoadUser();

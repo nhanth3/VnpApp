@@ -116,7 +116,7 @@
             // 
             // btnSaveUser
             // 
-            this.btnSaveUser.Location = new System.Drawing.Point(626, 100);
+            this.btnSaveUser.Location = new System.Drawing.Point(614, 95);
             this.btnSaveUser.Name = "btnSaveUser";
             this.btnSaveUser.Size = new System.Drawing.Size(75, 23);
             this.btnSaveUser.TabIndex = 26;
@@ -127,14 +127,14 @@
             // cboUserFind
             // 
             this.cboUserFind.FormattingEnabled = true;
-            this.cboUserFind.Location = new System.Drawing.Point(614, 140);
+            this.cboUserFind.Location = new System.Drawing.Point(601, 140);
             this.cboUserFind.Name = "cboUserFind";
             this.cboUserFind.Size = new System.Drawing.Size(100, 290);
             this.cboUserFind.TabIndex = 25;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(626, 66);
+            this.btnLogin.Location = new System.Drawing.Point(614, 66);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 24;
@@ -144,14 +144,14 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(614, 40);
+            this.textBox2.Location = new System.Drawing.Point(601, 40);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 23;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(614, 14);
+            this.textBox1.Location = new System.Drawing.Point(601, 14);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 22;
@@ -159,7 +159,7 @@
             // 
             // webBrowser3
             // 
-            this.webBrowser3.Location = new System.Drawing.Point(720, 150);
+            this.webBrowser3.Location = new System.Drawing.Point(720, 170);
             this.webBrowser3.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser3.Name = "webBrowser3";
             this.webBrowser3.Size = new System.Drawing.Size(442, 260);
