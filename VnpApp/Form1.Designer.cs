@@ -42,6 +42,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.webBrowser3 = new System.Windows.Forms.WebBrowser();
+            this.webBrowser4 = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
             // webBrowser1
@@ -131,6 +132,7 @@
             this.cboUserFind.Name = "cboUserFind";
             this.cboUserFind.Size = new System.Drawing.Size(100, 290);
             this.cboUserFind.TabIndex = 25;
+            this.cboUserFind.SelectedIndexChanged += new System.EventHandler(this.cboUserFind_SelectedIndexChanged);
             // 
             // btnLogin
             // 
@@ -165,11 +167,20 @@
             this.webBrowser3.Size = new System.Drawing.Size(442, 260);
             this.webBrowser3.TabIndex = 27;
             // 
+            // webBrowser4
+            // 
+            this.webBrowser4.Location = new System.Drawing.Point(22, 231);
+            this.webBrowser4.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser4.Name = "webBrowser4";
+            this.webBrowser4.Size = new System.Drawing.Size(563, 204);
+            this.webBrowser4.TabIndex = 29;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 447);
+            this.Controls.Add(this.webBrowser4);
             this.Controls.Add(this.webBrowser3);
             this.Controls.Add(this.btnSaveUser);
             this.Controls.Add(this.cboUserFind);
@@ -207,6 +218,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.WebBrowser webBrowser3;
+        private System.Windows.Forms.WebBrowser webBrowser4;
     }
 }
 

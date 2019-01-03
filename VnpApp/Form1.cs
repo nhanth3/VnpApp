@@ -75,6 +75,7 @@ namespace VnpApp
         private void LoadPageFindNumber()
         {
             webBrowser2.Navigate("http://10.149.34.168/ccbs/main?1iutlomLork=vzzh5rgvnj5inutyu5otjk~");
+            webBrowser4.Navigate("http://10.149.34.168/ccbs/main?1iutlomLork=vzzh5rgvnj5inutyu5otjk~");
         }
 
         private void LoadPageRegister()
@@ -101,7 +102,7 @@ namespace VnpApp
             while (webBrowser1.Document.GetElementById("ab") == null)
             {
                 Application.DoEvents();
-                Thread.Sleep(500);
+                Thread.Sleep(200);
 
             }
             this.LoadPageChild();
@@ -144,7 +145,7 @@ namespace VnpApp
              "{Objects=[\"txtSoTB\",\"cboLoaiSo\",\"cmdTimkiem\"],Fields=[\"SO_TB\",\"KIEU_SO\",null],change_subrange()," +
              "check_flag()}function getDsKHoa(){DataRemoting.getDoc('neo.numstore.doc_layds_khoa(\"" + name + "\")',DOC_layds_khoa)}var DOC_layds_khoa=function(o){$(\"ajaxKhoa\").innerHTML=o};" +
              "function check_flag(){DataRemoting.getValue(\"neo.numstore.doc_flag(5)\",flag_func)}" +
-             "var flag_func=function(o){iFlag=\"1\"==o?1:2};function layds_thuebao2(o,e){if(check_flag(),1==iFlag)" +
+             "var flag_func=function(o){iFlag=\"1\"==o?1:2};function layds_thuebao2(o,e){document.getElementById('cboTrangthai').options[2].selected = 'selected';if(check_flag(),1==iFlag)" +
              "if(1==$(\"cboTrangthai\").value)var a='neo.numstore.doc_layds_thuebao_dk(\"'+$(\"txtSoTB\").value+'\"," +
              "\"'+$(\"cboLoaiSo\").value+'\",\"'+$(\"cboSubRange\").value+'\",\"'+$(\"cboTrangthai\").value+'\",\"" + name + "\",\"'+o+'\",\"'+e+'\")';else a='neo.numstore.doc_layds_thuebao_1(\"'+$(\"txtSoTB\").value+'\"," +
              "\"'+$(\"cboLoaiSo\").value+'\",\"'+$(\"cboSubRange\").value+'\",\"'+$(\"cboTrangthai\").value+'\",\"" + name + "\",\"'+o+'\",\"'+e+'\")';else a='neo.numstore.doc_layds_thuebao_api(\"'+$(\"txtSoTB\").value+'\"," +
@@ -219,24 +220,6 @@ namespace VnpApp
         {
 
         }
-
-        //private void button4_Click_1(object sender, EventArgs e)
-        //{
-        //    var length = webBrowser2.Document.GetElementById("table_phieu").GetElementsByTagName("tr").Count;
-        //    string stb = string.Empty;
-        //    string status = string.Empty;
-        //    for (var i = 1; i < length; i++)
-        //    {
-        //        stb = webBrowser2.Document.GetElementById("table_phieu").GetElementsByTagName("tr")[i].GetElementsByTagName("td")[1].InnerText;
-        //        status = webBrowser2.Document.GetElementById("table_phieu").GetElementsByTagName("tr")[i].GetElementsByTagName("td")[2].InnerText;
-        //        if (status == "Trong kho")
-        //        {
-        //            webBrowser3.Document.GetElementById("txtsomay").InnerHtml = stb;
-
-        //        }
-
-        //    }
-        //}
 
         private void LoadPageChild()
         {
@@ -332,6 +315,8 @@ namespace VnpApp
             btnStop.Visible = true;
             checkLoop = true;
             stbed = string.Empty;
+            webBrowser3.Document.GetElementById("txtsomay").InnerHtml = string.Empty;
+            AddFilerHide();
             while (checkLoop && string.IsNullOrEmpty(stbed))
             {
                 countLB = 0;
@@ -351,5 +336,43 @@ namespace VnpApp
 
 
         }
+
+        private void cboUserFind_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddFilerHide()
+        {
+            string scriptSL = "document.getElementById('cboSubRange').options[" + webBrowser4.Document.GetElementById("cboSubRange").GetAttribute("selectedIndex")
+              + "].selected = 'selected';change_subrange();setTimeout(function(){" + "document.getElementById('cboLoaiSo').options[" + webBrowser4.Document.GetElementById("cboLoaiSo").GetAttribute("selectedIndex") + "].selected = 'selected';" + "},300);";
+            //document.getElementById('cboLoaiSo').options[" + webBrowser4.Document.GetElementById("cboLoaiSo").GetAttribute("selectedIndex") +"].selected = 'selected';
+            HtmlDocument doc = webBrowser2.Document;
+            HtmlElement head = doc.GetElementsByTagName("head")[0];
+            HtmlElement s = doc.CreateElement("script");
+            s.SetAttribute("text", scriptSL);
+            head.AppendChild(s);
+            int waitLoad = 0;
+            while (true)
+            {
+                waitLoad++;
+                Application.DoEvents();
+                Thread.Sleep(1);
+                if (waitLoad == 300) { break; }
+            }
+            webBrowser2.Document.GetElementById("txtSoTB").InnerText = webBrowser4.Document.GetElementById("txtSoTB").GetAttribute("value");
+        }
+        /*private void button1_Click_2(object sender, EventArgs e)
+        {
+            string scriptSL = "document.getElementById('cboSubRange').options[" + webBrowser4.Document.GetElementById("cboSubRange").GetAttribute("selectedIndex")
+                + "].selected = 'selected';change_subrange();setTimeout(function(){" + "document.getElementById('cboLoaiSo').options[" + webBrowser4.Document.GetElementById("cboLoaiSo").GetAttribute("selectedIndex") + "].selected = 'selected';" + "},300);";
+            //document.getElementById('cboLoaiSo').options[" + webBrowser4.Document.GetElementById("cboLoaiSo").GetAttribute("selectedIndex") +"].selected = 'selected';
+            HtmlDocument doc = webBrowser2.Document;
+            HtmlElement head = doc.GetElementsByTagName("head")[0];
+            HtmlElement s = doc.CreateElement("script");
+            s.SetAttribute("text", scriptSL);
+            head.AppendChild(s);
+            webBrowser2.Document.GetElementById("txtSoTB").InnerText = webBrowser4.Document.GetElementById("txtSoTB").GetAttribute("value");
+        }*/
     }
 }
