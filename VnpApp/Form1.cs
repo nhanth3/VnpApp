@@ -12,7 +12,7 @@ namespace VnpApp
 
         private string PassWord = string.Empty;
         string stbed = string.Empty;
-        dynamic timer;
+        bool checkStop = false; 
         bool checkLoop = true;
         int countLB = 0;
         int indexUser = 0;
@@ -195,6 +195,12 @@ namespace VnpApp
         private void btnStop_Click(object sender, EventArgs e)
         {
             checkLoop = false;
+            checkStop = true;
+            while (checkStop)
+            {
+
+                Application.DoEvents();
+            }
             btnStop.Visible = false;
         }
 
@@ -260,7 +266,8 @@ namespace VnpApp
                         webBrowser3.Document.GetElementById("txtsomay").InnerHtml = stb;
                         stbed = stb;
                         int waitLoad24 = 0;
-                        while (true)                        {
+                        while (true)
+                        {
                             waitLoad24++;
                             Application.DoEvents();
                             Thread.Sleep(60);
@@ -276,7 +283,7 @@ namespace VnpApp
                     {
                         waitLoad23++;
                         Application.DoEvents();
-                        Thread.Sleep(60);
+                        Thread.Sleep(65);
                         if (waitLoad23 == 100) { break; }
                     }
                     countLB++;
@@ -316,7 +323,7 @@ namespace VnpApp
 
                 TranNumber();
                 countUserSearch++;
-                if (countUserSearch > 4998)
+                if (countUserSearch > 4988)
                 {
                     indexUser++;
                 }
@@ -326,6 +333,7 @@ namespace VnpApp
         {
             btnStop.Visible = true;
             checkLoop = true;
+            checkStop = false;
             stbed = string.Empty;
             webBrowser3.Document.GetElementById("txtsomay").InnerHtml = string.Empty;
             AddFilerHide();
