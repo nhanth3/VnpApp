@@ -7,3 +7,12 @@ C:\Users\Nhan\source\repos\VnpApp\VnpApp\bin\Debug\VnpApp.exe
 C:\Users\Nhan\source\repos\VnpApp\VnpApp\bin\Debug\VnpApp.pdb
 C:\Users\Nhan\source\repos\VnpApp\VnpApp\obj\Debug\VnpApp.exe
 C:\Users\Nhan\source\repos\VnpApp\VnpApp\obj\Debug\VnpApp.pdb
+C:\Users\ASUS\Documents\GitHub\VnpApp\VnpApp\bin\Debug\VnpApp.exe
+C:\Users\ASUS\Documents\GitHub\VnpApp\VnpApp\bin\Debug\VnpApp.pdb
+C:\Users\ASUS\Documents\GitHub\VnpApp\VnpApp\obj\Debug\VnpApp.csprojAssemblyReference.cache
+C:\Users\ASUS\Documents\GitHub\VnpApp\VnpApp\obj\Debug\VnpApp.Form1.resources
+C:\Users\ASUS\Documents\GitHub\VnpApp\VnpApp\obj\Debug\VnpApp.Properties.Resources.resources
+C:\Users\ASUS\Documents\GitHub\VnpApp\VnpApp\obj\Debug\VnpApp.csproj.GenerateResource.cache
+C:\Users\ASUS\Documents\GitHub\VnpApp\VnpApp\obj\Debug\VnpApp.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Documents\GitHub\VnpApp\VnpApp\obj\Debug\VnpApp.exe
+C:\Users\ASUS\Documents\GitHub\VnpApp\VnpApp\obj\Debug\VnpApp.pdb

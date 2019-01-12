@@ -259,14 +259,26 @@ namespace VnpApp
                     {
                         webBrowser3.Document.GetElementById("txtsomay").InnerHtml = stb;
                         stbed = stb;
-
-                        break;
+                        int waitLoad24 = 0;
+                        while (true)                        {
+                            waitLoad24++;
+                            Application.DoEvents();
+                            Thread.Sleep(60);
+                            if (waitLoad24 == 100) { break; }
+                        }
                     }
                 }
 
-                if (length == 11 && string.IsNullOrEmpty(stbed))
+                if (length == 11)
                 {
-                    Thread.Sleep(7000);
+                    int waitLoad23 = 0;
+                    while (true)
+                    {
+                        waitLoad23++;
+                        Application.DoEvents();
+                        Thread.Sleep(60);
+                        if (waitLoad23 == 100) { break; }
+                    }
                     countLB++;
                     ClickFind(countLB);
                     TranNumber();
