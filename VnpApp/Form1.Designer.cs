@@ -169,7 +169,7 @@
             // 
             // webBrowser4
             // 
-            this.webBrowser4.Location = new System.Drawing.Point(12, -13);
+            this.webBrowser4.Location = new System.Drawing.Point(22, 231);
             this.webBrowser4.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser4.Name = "webBrowser4";
             this.webBrowser4.Size = new System.Drawing.Size(563, 204);
