@@ -293,6 +293,19 @@ namespace VnpApp
             }
             catch
             {
+                webBrowser1.Document.ExecCommand("ClearAuthenticationCache", false, null);
+ 
+                string[] theCookies = System.IO.Directory.GetFiles(Environment.GetFolderPath(Environment.SpecialFolder.Cookies));
+               /* foreach (string currentFile in theCookies)
+                {
+                    try
+                    {
+                        System.IO.File.Delete(currentFile);
+                    }
+                    catch (Exception ex)
+                    {
+                    }
+                }*/
                 this.loadPage();
                 int waitLoad2 = 0;
                 while (true)
@@ -306,6 +319,16 @@ namespace VnpApp
                 string user = textBox1.Text;
                 string pass = textBox2.Text;
                 login2(user, pass);
+
+                int waitLoad3 = 0;
+                while (true)
+                {
+                    waitLoad3++;
+                    Application.DoEvents();
+                    Thread.Sleep(1);
+                    if (waitLoad2 == 1000) { break; }
+                }
+              //  webBrowser2.Navigate("http://10.149.34.168/ccbs/main?1iutlomLork=vzzh5rgvnj5inutyu5otjk~");
                 btnFind_Click(new object(), new EventArgs());
             }
 
