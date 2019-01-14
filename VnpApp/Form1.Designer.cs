@@ -166,6 +166,7 @@
             this.webBrowser3.Name = "webBrowser3";
             this.webBrowser3.Size = new System.Drawing.Size(442, 260);
             this.webBrowser3.TabIndex = 27;
+            this.webBrowser3.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser3_DocumentCompleted);
             // 
             // webBrowser4
             // 

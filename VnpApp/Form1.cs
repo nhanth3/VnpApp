@@ -265,6 +265,15 @@ namespace VnpApp
                     {
                         webBrowser3.Document.GetElementById("txtsomay").InnerHtml = stb;
                         stbed = stb;
+                        if (!string.IsNullOrEmpty(stb)) {
+
+                            string scriptSL3 = "action();";
+                            HtmlDocument doc3 = webBrowser3.Document;
+                            HtmlElement head3 = doc3.GetElementsByTagName("head")[0];
+                            HtmlElement s3 = doc3.CreateElement("script");
+                            s3.SetAttribute("text", scriptSL3);
+                            head3.AppendChild(s3);
+                        }
                         int waitLoad24 = 0;
                         while (true)
                         {
@@ -405,17 +414,22 @@ namespace VnpApp
             }
             webBrowser2.Document.GetElementById("txtSoTB").InnerText = webBrowser4.Document.GetElementById("txtSoTB").GetAttribute("value");
         }
-        /*private void button1_Click_2(object sender, EventArgs e)
+
+        private void webBrowser3_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            string scriptSL = "document.getElementById('cboSubRange').options[" + webBrowser4.Document.GetElementById("cboSubRange").GetAttribute("selectedIndex")
-                + "].selected = 'selected';change_subrange();setTimeout(function(){" + "document.getElementById('cboLoaiSo').options[" + webBrowser4.Document.GetElementById("cboLoaiSo").GetAttribute("selectedIndex") + "].selected = 'selected';" + "},300);";
-            //document.getElementById('cboLoaiSo').options[" + webBrowser4.Document.GetElementById("cboLoaiSo").GetAttribute("selectedIndex") +"].selected = 'selected';
-            HtmlDocument doc = webBrowser2.Document;
-            HtmlElement head = doc.GetElementsByTagName("head")[0];
-            HtmlElement s = doc.CreateElement("script");
-            s.SetAttribute("text", scriptSL);
-            head.AppendChild(s);
-            webBrowser2.Document.GetElementById("txtSoTB").InnerText = webBrowser4.Document.GetElementById("txtSoTB").GetAttribute("value");
-        }*/
+
+        }
+        /*private void button1_Click_2(object sender, EventArgs e)
+{
+   string scriptSL = "document.getElementById('cboSubRange').options[" + webBrowser4.Document.GetElementById("cboSubRange").GetAttribute("selectedIndex")
+       + "].selected = 'selected';change_subrange();setTimeout(function(){" + "document.getElementById('cboLoaiSo').options[" + webBrowser4.Document.GetElementById("cboLoaiSo").GetAttribute("selectedIndex") + "].selected = 'selected';" + "},300);";
+   //document.getElementById('cboLoaiSo').options[" + webBrowser4.Document.GetElementById("cboLoaiSo").GetAttribute("selectedIndex") +"].selected = 'selected';
+   HtmlDocument doc = webBrowser2.Document;
+   HtmlElement head = doc.GetElementsByTagName("head")[0];
+   HtmlElement s = doc.CreateElement("script");
+   s.SetAttribute("text", scriptSL);
+   head.AppendChild(s);
+   webBrowser2.Document.GetElementById("txtSoTB").InnerText = webBrowser4.Document.GetElementById("txtSoTB").GetAttribute("value");
+}*/
     }
 }
