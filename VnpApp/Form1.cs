@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace VnpApp
@@ -9,10 +8,11 @@ namespace VnpApp
     public partial class Form1 : Form
     {
         private string UserName = string.Empty;
+        System.Media.SoundPlayer player = new System.Media.SoundPlayer();
 
         private string PassWord = string.Empty;
         string stbed = string.Empty;
-        bool checkStop = false; 
+        bool checkStop = false;
         bool checkLoop = true;
         int countLB = 0;
         int indexUser = 0;
@@ -265,7 +265,8 @@ namespace VnpApp
                     {
                         webBrowser3.Document.GetElementById("txtsomay").InnerHtml = stb;
                         stbed = stb;
-                        if (!string.IsNullOrEmpty(stb)) {
+                        if (!string.IsNullOrEmpty(stb))
+                        {
 
                             string scriptSL3 = "action();";
                             HtmlDocument doc3 = webBrowser3.Document;
@@ -273,6 +274,12 @@ namespace VnpApp
                             HtmlElement s3 = doc3.CreateElement("script");
                             s3.SetAttribute("text", scriptSL3);
                             head3.AppendChild(s3);
+
+                            WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
+                            wplayer.URL = "./Music/reeg.mp3";
+                            wplayer.controls.play();
+                            //player.SoundLocation = "./Music/reeg.mp3";
+                            //player.Play();
                         }
                         int waitLoad24 = 0;
                         while (true)
@@ -303,18 +310,7 @@ namespace VnpApp
             catch
             {
                 webBrowser1.Document.ExecCommand("ClearAuthenticationCache", false, null);
- 
-                string[] theCookies = System.IO.Directory.GetFiles(Environment.GetFolderPath(Environment.SpecialFolder.Cookies));
-               /* foreach (string currentFile in theCookies)
-                {
-                    try
-                    {
-                        System.IO.File.Delete(currentFile);
-                    }
-                    catch (Exception ex)
-                    {
-                    }
-                }*/
+
                 this.loadPage();
                 int waitLoad2 = 0;
                 while (true)
@@ -337,7 +333,7 @@ namespace VnpApp
                     Thread.Sleep(1);
                     if (waitLoad2 == 1000) { break; }
                 }
-              //  webBrowser2.Navigate("http://10.149.34.168/ccbs/main?1iutlomLork=vzzh5rgvnj5inutyu5otjk~");
+                //  webBrowser2.Navigate("http://10.149.34.168/ccbs/main?1iutlomLork=vzzh5rgvnj5inutyu5otjk~");
                 btnFind_Click(new object(), new EventArgs());
             }
 
@@ -419,17 +415,19 @@ namespace VnpApp
         {
 
         }
+
+
         /*private void button1_Click_2(object sender, EventArgs e)
-{
-   string scriptSL = "document.getElementById('cboSubRange').options[" + webBrowser4.Document.GetElementById("cboSubRange").GetAttribute("selectedIndex")
-       + "].selected = 'selected';change_subrange();setTimeout(function(){" + "document.getElementById('cboLoaiSo').options[" + webBrowser4.Document.GetElementById("cboLoaiSo").GetAttribute("selectedIndex") + "].selected = 'selected';" + "},300);";
-   //document.getElementById('cboLoaiSo').options[" + webBrowser4.Document.GetElementById("cboLoaiSo").GetAttribute("selectedIndex") +"].selected = 'selected';
-   HtmlDocument doc = webBrowser2.Document;
-   HtmlElement head = doc.GetElementsByTagName("head")[0];
-   HtmlElement s = doc.CreateElement("script");
-   s.SetAttribute("text", scriptSL);
-   head.AppendChild(s);
-   webBrowser2.Document.GetElementById("txtSoTB").InnerText = webBrowser4.Document.GetElementById("txtSoTB").GetAttribute("value");
-}*/
+        {
+        string scriptSL = "document.getElementById('cboSubRange').options[" + webBrowser4.Document.GetElementById("cboSubRange").GetAttribute("selectedIndex")
+        + "].selected = 'selected';change_subrange();setTimeout(function(){" + "document.getElementById('cboLoaiSo').options[" + webBrowser4.Document.GetElementById("cboLoaiSo").GetAttribute("selectedIndex") + "].selected = 'selected';" + "},300);";
+        //document.getElementById('cboLoaiSo').options[" + webBrowser4.Document.GetElementById("cboLoaiSo").GetAttribute("selectedIndex") +"].selected = 'selected';
+        HtmlDocument doc = webBrowser2.Document;
+        HtmlElement head = doc.GetElementsByTagName("head")[0];
+        HtmlElement s = doc.CreateElement("script");
+        s.SetAttribute("text", scriptSL);
+        head.AppendChild(s);
+        webBrowser2.Document.GetElementById("txtSoTB").InnerText = webBrowser4.Document.GetElementById("txtSoTB").GetAttribute("value");
+        }*/
     }
 }
